@@ -1,0 +1,57 @@
+<HTMl:5>
+<head>
+    <meta charset="utf-8" />
+    <title>Rock Paper Sissors</title>
+    <script>
+        // Función para generar numeros aleatorios entre un rango asignado
+        function generarEnterosAleatorios(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        // Función para interpretar elegir un numero
+        function numeroElegido(seleccionJugador) {
+            let eleccion = ""
+            if(seleccionJugador == 1) {  
+                return eleccion = "piedra"
+            } else if(seleccionJugador == 2) {  
+                return eleccion = "papel"
+            } else if(seleccionJugador == 3) {  
+                return eleccion = "tijera"
+            } else {
+                return eleccion = "No elegiste una opción válida"
+            } 
+        }
+
+        // La computadora elige aleatoreamente un número entre 1 y 3
+        let eleccionpc = generarEnterosAleatorios(1,3)
+        
+        //El jugador elige: 1 es piedra, 2 es papel, 3 es tijera
+        let eleccionjugador = 0
+        eleccionjugador = prompt("Elige 1 para piedra, 2 para papel, 3 para tijera")
+        
+        //variable resultado
+        let resultado = 0
+
+        //Cuando el jugador gana
+        if((numeroElegido(eleccionjugador) == "piedra" && numeroElegido(eleccionpc) == "tijera")
+        || (numeroElegido(eleccionjugador) == "papel" && numeroElegido(eleccionpc) == "piedra") 
+        || (numeroElegido(eleccionjugador) == "tijera" && numeroElegido(eleccionpc) == "papel")) {  
+            resultado = "GANASTE"                 
+        //Cuando el jugador empata
+        } else if(eleccionjugador == eleccionpc) {
+            resultado = "EMPATARON"  
+        //Cuando el jugador pierde
+        } else {
+            resultado = "PERDISTE"  
+        }        
+        
+        //Imprimir resultado
+            alert("Elegiste " + numeroElegido(eleccionjugador) + "\n\nLa computadora eligió " + numeroElegido(eleccionpc) + "\n\nResultado: " + resultado)         
+    </script>
+</head>
+<body>
+<h2>PIEDRA PAPEL O TIJERA</h2>
+<p>Este es nuestro primer programa complto y profesional</p>
+<p>Gran programa</p>
+</body>
+</HTMl:5>
